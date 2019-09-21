@@ -1,9 +1,11 @@
 {
   "name": "multiroom_chat",
   "version": "1.0.0",
-  "description": "",
+  "description": "Jogo do got ",
   "main": "index.js",
   "scripts": {
+    "dev" : "nodemon app",
+    "banco" : "mongod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Hamilton Silva",
