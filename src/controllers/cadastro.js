@@ -13,5 +13,7 @@ module.exports.cadastrar = function (app, req, res) {
         return ;
     }
     res.send('Podemos cadrastrar ');
-    console.log(dadosFor);
+    var connection = app.config.dbConnection;
+    var usuarioDao = new app.src.models.UsuariosDao(connection);
+    usuarioDao.addUsuario(dadosFor);
 }
