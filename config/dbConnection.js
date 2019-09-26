@@ -4,7 +4,6 @@ var mongo = require('mongodb');
 // Exportando a biblioteca mongodb
 
 var connection = function (){
-    console.log('Passei ...');
     // instanciar variavel de conexão
     var db = new mongo.Db(
         'got', // Nome do banco de dados 

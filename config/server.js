@@ -26,12 +26,13 @@ app.use(express.static('./src/public'));
 /* configurar o middleware body-parser */
 app.use(bodyParser.urlencoded({extended: true}));
 
-/* configurar o middleware express-validator */
 app.use(expressValidator());
-
-/* configurar o middleware express-session */
-
-
+/*Configurando o middleware espress-session*/
+app.use(expressSession({
+	secret: 'kdjfbxndslwewnnsdoedkejnfd',
+	resave: false,
+	saveUninitialized:false 
+}));
 /* efetua o autoload das rotas, dos models e dos controllers para o objeto app */
 consign()
 	.include('src/routes')
