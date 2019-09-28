@@ -13,10 +13,10 @@ UsuariosDOA.prototype.autenticar = function (usuario,req,res) {   // Dados vindo
   this._connection.open(function (erro, mongoClient) { // Usando a a função de conexão do mongodb e iniciando uma conexão com função de callback
       mongoClient.collection('usuaruios', function(erro, collection){ // Fazendo uma collection nome da tabela e função de calback com a collection 
            collection.find(usuario).toArray((erro, result) => {
-             if(result[0] != undefined){
+             if(!!result[0]){
                req.session.autorizar = true;
-               req.session.usuario = result[0].usuario;
-               req.session.casa = result[0].casa;
+               req.session.usuario = result[0].usuario; 
+               req.session.casa = result[0].casa; // Vou usar essa variavel de sessão para fazer o controlo das imagens do usuário
               }
               if(req.session.autorizar){
                 res.redirect('jogo');

@@ -12,7 +12,13 @@
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<!-- incluindo css -->
 		<link href="css/style.css" rel="stylesheet">
-
+		<script>
+			$(document).ready(function(){
+				$('#btn-cadastrar').click(function(){
+					window.location.href = '/cadastro';
+				});
+			});
+		</script>
 	</head>
 
 	<body class="body-index">
@@ -36,7 +42,7 @@
 						<input type="text" name="usuario" id="usuario" placeholder="Usuário" class="form-control" autocomplete="off" name="usuario" />
 						<input type="password" name="senha" id="senha" placeholder="Senha" class="form-control" name="senha"/>
 						<button  class="btn btn-success" type="submit">Entrar</button>
-						<button type="button" class="btn btn-info">Cadastro</button>
+						<button type="button" class="btn btn-info" id="btn-cadastrar">Cadastro</button>
 					</div>
 				</form>
 			</div>
