@@ -15,5 +15,7 @@ module.exports.cadastrar = function (app, req, res) {
     res.send('Podemos cadrastrar ');
     var connection = app.config.dbConnection;
     var usuarioDao = new app.src.models.UsuariosDao(connection);
+    var jogoDao = new app.src.models.jogoDao(connection);
     usuarioDao.addUsuario(dadosFor);
+    jogoDao.postPa(dadosFor.usuario);
 }
